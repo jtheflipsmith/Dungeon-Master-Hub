@@ -1,4 +1,11 @@
 
+export function getParam(param) {
+  const queryString = window.location.pathname;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(param);
+
+}
+
 // this is for header and footer
 export function renderWithTemplate(template, parentElement, data, callback) {
   const html = template;
@@ -22,3 +29,4 @@ export async function loadHeaderFooter() {
         renderWithTemplate(await headerTemplate, headerElement);
         renderWithTemplate(await footerTemplate, footerElement);
 }
+

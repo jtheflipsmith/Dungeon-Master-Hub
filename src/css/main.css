@@ -9,31 +9,48 @@
 body {
     background-color: var(--blackberry-cream);
     color: var(--charcoal);
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-
 }
 
-header, footer {
-    background-color: var(--muted-teal);
-    color: var(--khaki-beige);
-    padding: 1rem;
-    text-align: center;
-}
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+.header-container {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    background-color: var(--night-bordeaux);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    nav {
+
+        margin-left: auto;
+        padding-right: 1rem;
+        
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: var(--khaki-beige);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            &:hover {
+                background-color: var(--charcoal);
+                color: white;
+                border-radius: 4px;
+            }
+        }
+    }
+
 }
 
-nav a {
-    color: var(--khaki-beige);
-    text-decoration: none;
-    font-weight: bold;
+.logo {
+    height: 100px;
+    
 }
 
 /* Spell Library */
