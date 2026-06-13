@@ -1,3 +1,5 @@
+import { loadHeaderFooter } from './utils.mjs';
+
 const spellList = document.getElementById('spellList');
 
 getSpells();

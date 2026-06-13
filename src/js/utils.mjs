@@ -8,8 +8,17 @@ export function renderWithTemplate(template, parentElement, data, callback) {
   }
 }
 
+async function loadTemplate(path) {
+  const response = await fetch(path);
+  const template = await response.text();
+  return template;
+}
 
 export async function loadHeaderFooter() {
-        const headerTemplate = await fetch('../partials/header.html');
+        const headerTemplate = await loadTemplate('../partials/header.html');
         const headerElement = document.getElementById('mainH');
-        
+        const footerTemplate = await loadTemplate('../partials/footer.html');
+        const footerElement = document.getElementById('mainF');
+        renderWithTemplate(await headerTemplate, headerElement);
+        renderWithTemplate(await footerTemplate, footerElement);
+}
