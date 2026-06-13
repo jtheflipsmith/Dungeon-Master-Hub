@@ -2,7 +2,7 @@
     --khaki-beige: hsla(39, 38%, 69%, 1);
     --muted-teal: hsla(141, 13%, 51%, 1);
     --charcoal: hsla(253, 8%, 36%, 1);
-    --blackberry-cream: hsla(325, 33%, 27%, 1);
+    --blackberry-cream: hsla(325, 33%, 27%, 0.8);
     --night-bordeaux: hsla(342, 58%, 18%, 1);
 }
 
@@ -11,6 +11,7 @@ body {
     color: var(--charcoal);
     margin: 0;
     padding: 0;
+
 }
 
 header, footer {
@@ -37,10 +38,13 @@ nav a {
 
 /* Spell Library */
 
-h1 {
+.spell-header {
     text-align: center;
     margin-top: 1rem;
     color: black;
+    font-family: "Ephesis", cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
 }
 #spellList {
     display: grid;
