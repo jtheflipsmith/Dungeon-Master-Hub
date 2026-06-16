@@ -1,9 +1,7 @@
 
 export function getParam(param) {
-  const queryString = window.location.pathname;
-  const urlParams = new URLSearchParams(queryString);
+  const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
-
 }
 
 // this is for header and footer
