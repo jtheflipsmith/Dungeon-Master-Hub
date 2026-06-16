@@ -1,20 +1,30 @@
-const baseURL = "https://www.dnd5eapi.co/api";
+const dndURL = "https://www.dnd5eapi.co/api";
+const dictURL = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
 function convertToJson(res) {
-    if (res.ok) {
-        return res.json();
-    } else {
-        throw new Error ("Bad Response");
-    }
+  if (res.ok) {
+    return res.json();
+  }
+  throw new Error("Bad Response");
 }
 
 export default class ProjectData {
-    constructor(category) {
+  constructor(category = "spells") {
+    this.category = category;
+  }
 
-    }
-    async getData(category) {
-        const response = await fetch(`${baseURL}/2014/${category}`);
-        const data = await convertToJson(response);
-        return data.Result;
-    }
+  async getData(category = this.category) {
+    const normalizedCategory = category.replace(/\./g, "/");
+    const response = await fetch(`${dndURL}/2014/${normalizedCategory}`);
+    return convertToJson(response);
+  }
+
+  async findItemByIndex(index) {
+    const normalizedIndex = index.startsWith("spells/") ? index : `spells/${index}`;
+    return this.getData(normalizedIndex);
+  }
+
+  async dictionarySearch(word) {
+    const response = await fetch(`${dictURL}${word}`)
+  }
 }

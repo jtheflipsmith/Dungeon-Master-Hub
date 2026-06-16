@@ -12,18 +12,26 @@
 </head>
 <body>
     <header id="mainH"></header>
-    <main>
+    <main id="index">
+
         <section>
             <h2>Introduction</h2>
             <p>This is the main page of our website. Here you can find various resources and information about our services.</p>
         </section>
-        <section>
-            <h2>Features</h2>
-            <ul>
-                <li>Feature 1: Description of feature 1.</li>
-                <li>Feature 2: Description of feature 2.</li>
-                <li>Feature 3: Description of feature 3.</li>
-            </ul>
+                <section>
+            <h2>Dictionary Search</h2>
+            <form id="wordSearch">
+                <label for="search">Definition Lookup</label>
+                <input type="text" id="search">
+                <button>Search</button>
+            </form>
+        </section>
+        <section id="notes">
+            <h2>Campaign Notes</h2>
+            <form>
+                <label for="notes">Notes</label>
+                <textarea name="notes" id="campaignNotes"></textarea>
+            </form>
         </section>
     </main>
     <footer id="mainF"></footer>
