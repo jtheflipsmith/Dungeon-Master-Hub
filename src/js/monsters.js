@@ -19,7 +19,7 @@ async function loadSpellList() {
     card.className = 'spell-card';
     card.href = `spells.html?spell=${spell.index}`;
     card.innerHTML = `
-      <div class="card-content">
+      <div class='card-content'>
         <h3>${spell.name}</h3>
         <p>${spell.desc || ''}</p>
       </div>
