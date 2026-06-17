@@ -14,6 +14,7 @@ form.addEventListener("submit", function(event) {
 
 });
 
+
 async function wordSearch(word) {
     data = new ProjectData.dictionarySearch(word);
 

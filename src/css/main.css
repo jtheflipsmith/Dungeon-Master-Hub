@@ -5,11 +5,17 @@
     --blackberry-cream: hsla(325, 33%, 27%, 0.8);
     --night-bordeaux: hsla(342, 58%, 18%, 1);
     /* CSS HSL */
---toffee-brown: hsla(17, 27%, 44%, 1);
---sky-blue-light: hsla(191, 93%, 68%, 1);
---shamrock: hsla(153, 87%, 32%, 1);
---bone: hsla(38, 31%, 84%, 1);
---graphite: hsla(0, 0%, 16%, 1);
+    --toffee-brown: hsla(17, 27%, 44%, 1);
+    --sky-blue-light: hsla(191, 93%, 68%, 1);
+    --shamrock: hsla(153, 87%, 32%, 1);
+    --bone: hsla(38, 31%, 84%, 1);
+    --graphite: hsla(0, 0%, 16%, 1);
+}
+
+* {
+    p {
+        font-size: 1.2rem;
+    }
 }
 
 body {
@@ -44,7 +50,9 @@ body {
             text-decoration: none;
             padding: 0.5rem 1rem;
             text-transform: uppercase;
+            font-size: 1.3rem;
             &:hover {
+                transform: fadeIn(0.3s);
                 background-color: var(--charcoal);
                 color: white;
                 border-radius: 4px;
@@ -61,17 +69,57 @@ body {
 
 /* MAIN VIEW CONTENT */
 
+
 #index {
     display:  grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 300px 1fr;
+
     gap: 30px;
     padding: 20px;
     padding-bottom: 500px;
     background: var(--graphite);
+    box-shadow: inset 0 0 100px black;
     
     section {
-    background: var(--bone)
+    background: var(--bone);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px var(--charcoal);
+    }
+}
+
+.hero {
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    border: 1px solid black;
+
+}
+
+.intro {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.search {
+    input {
+        padding: 0.75rem;
+        margin-top: 0.5rem;
+        border: 1px solid var(--charcoal);
+        border-radius: 4px;
+    }
+    button {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background-color: var(--toffee-brown);
+        color: var(--bone);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--sky-blue-light);
+        }
     }
 }
 
@@ -83,7 +131,16 @@ form {
 #campaignNotes {
     height: 100px;
 
-    
+
+}
+
+textarea {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--charcoal);
+    border-radius: 5px;
+    resize: none;
+    font-size: 1rem
 }
 
 /* Spell Library */
@@ -103,11 +160,49 @@ form {
     padding: 1rem;
 }
 
-section {
-    background-color: var(--khaki-beige);
+.spell-details {
+    background: var(--charcoal);
+    color: var(--bone);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px 0px 20px 0px;
+    box-shadow: 3px 3px 10px var(--toffee-brown)
+
+}
+
+.spell-card {
+    background-color: var(--bone);
     color: rgb(17, 16, 16);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 50px;
+
+    &:hover {
+        box-shadow: inset 0 0 10px 5px var(--sky-blue-light)
+    }
 }
+#saveSpell {
+    width: 150px;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: var(--toffee-brown);
+    color: var(--bone);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--sky-blue-light);
+        color: var(--charcoal);
+    }
+}
+
+
+
+
 
