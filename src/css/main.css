@@ -125,12 +125,25 @@ body {
 
 form {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 #campaignNotes {
     height: 100px;
-
+}
+.saveNote {
+    width: 150px;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: var(--toffee-brown);
+    color: var(--bone);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--sky-blue-light);
+        color: var(--charcoal);
+    }
 
 }
 
